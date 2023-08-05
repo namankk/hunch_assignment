@@ -82,13 +82,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ElevatedButton(
             onPressed: () {
               showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return const AlertDialog(
-                      title: Text("Thanks for tapping"),
-                      content: Text("Button tapped"),
-                    );
-                  });
+                context: context,
+                builder: (BuildContext context) {
+                  return const CustomDialog();
+                },
+              );
             },
             style: ElevatedButton.styleFrom(
                 shape: const ContinuousRectangleBorder()),
@@ -189,6 +187,53 @@ class _MyHomePageState extends State<MyHomePage> {
       width: 1,
       margin: const EdgeInsets.only(top: 3.0),
       color: Colors.black,
+    );
+  }
+}
+
+class CustomDialog extends StatefulWidget {
+  const CustomDialog({super.key});
+
+  @override
+  State<StatefulWidget> createState() => _CustomDialogState();
+}
+
+class _CustomDialogState extends State<CustomDialog>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
+    _controller.forward();
+
+    Future.delayed(const Duration(seconds: 5), () {
+      _controller.reverse().whenComplete(() => Navigator.of(context).pop());
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: FadeTransition(
+        opacity: _animation,
+        child: const AlertDialog(
+          title: Text('Thank you'),
+          content: Text('This dialog will close in 5 seconds.'),
+        ),
+      ),
     );
   }
 }
