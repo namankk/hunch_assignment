@@ -4,9 +4,13 @@ Hunch Assignment.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Hunch Assignment
 
-![Screenshot_1691218725](https://github.com/namankk/hunch_assignment/assets/42471501/33a8db07-4d60-4aea-86cc-1fcebf1ec27a)
+![Screenshot_1691220868](https://github.com/namankk/hunch_assignment/assets/42471501/31280128-5241-4044-83ec-415e75fba435)
+
+![Screenshot_1691220866](https://github.com/namankk/hunch_assignment/assets/42471501/709bdf55-4dc4-4866-9e6a-8d8135407a95)
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
