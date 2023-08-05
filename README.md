@@ -1,10 +1,12 @@
 # hunch
 
-A new Flutter project.
+Hunch Assignment.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+
+![Screenshot_1691218725](https://github.com/namankk/hunch_assignment/assets/42471501/33a8db07-4d60-4aea-86cc-1fcebf1ec27a)
 
 A few resources to get you started if this is your first Flutter project:
 
